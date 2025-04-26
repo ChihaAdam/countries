@@ -1,23 +1,27 @@
-
-import { QueryClientProvider,QueryClient } from '@tanstack/react-query'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import Nav from './pages/nav'
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Nav from "./pages/nav";
+import MainPage from "./pages/mainPage";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Nav />,
-    children: []
-  } 
-])
+    children: [
+      {
+        path: "/",
+        element:<MainPage />,
+      },  
+    ],
+  },
+]);
 function App() {
-
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </ QueryClientProvider>
-  )
+    </QueryClientProvider>
+  );
 }
 
-export default App
+export default App;
