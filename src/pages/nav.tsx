@@ -10,7 +10,7 @@ function Nav() {
                  gap-10  text-[var(--light-mode-text)] dark:text-white transition-all duration-300 ease-in-out"
     >
       <div
-        className="  flex justify-between bg-white dark:bg-[var(--dark-mode-elements)] py-4
+        className="sticky top-0 left-0 flex justify-between bg-white dark:bg-[var(--dark-mode-elements)] py-4
                           w-screen h-16 items-center 
                         px-20 shadow-sm shadow-gray-200 dark:shadow-gray-800 max-sm:px-4 max-sm:gap-2"
       >
