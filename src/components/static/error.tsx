@@ -14,7 +14,7 @@ export default function Error() {
         <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <Link 
+        <Link
           to="/"
           className="inline-flex items-center gap-2 bg-[var(--dark-mode-elements)] text-white dark:bg-white dark:text-[var(--dark-mode-elements)] px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
         >

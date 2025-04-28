@@ -1,19 +1,13 @@
 import { IoSearchOutline } from "react-icons/io5";
+import { useCountriesStore } from "../state/countries";
 
-interface SearchBarProps {
-  searchMutation: {
-    mutate: (term: string) => void;
-    reset: () => void;
-  }
-}
-
-export default function SearchBar({ searchMutation }: SearchBarProps) {
+export default function SearchBar({mutate}: {mutate: (name: string) => void}) {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.trim();
+    const value = e.target.value.toLowerCase();
     if (value.length > 0) {
-      searchMutation.mutate(value);
+      mutate(value);
     } else {
-      searchMutation.reset();
+      mutate("");
     }
   }
 

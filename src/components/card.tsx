@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface CardProps {
   name: string;
   population: number;
@@ -14,8 +16,17 @@ export default function Card({
   flags,
 }: CardProps) {
   // Define the Card component that takes in props for country details
+  const navigate = useNavigate();
+  const handleCardClick = (name: string) => {
+    navigate(`/info/${name}`);
+  };
   return (
-    <div className="bg-white dark:bg-[var(--dark-mode-elements)] shadow-md shadow-[var(--light-mode-shadow)] rounded-md pb-6 hover:shadow-lg transition-all duration-200 ease-in-out cursor-pointer max-sm:w-full max-sm:h-72 ">
+    <div
+      className="bg-white dark:bg-[var(--dark-mode-elements)] shadow-md shadow-[var(--light-mode-shadow)] 
+                  rounded-md pb-6 hover:shadow-lg transition-all duration-200 ease-in-out cursor-pointer 
+                  max-sm:w-full max-sm:h-72 "
+      onClick={() => handleCardClick(name)}
+    >
       <img
         src={flags}
         alt="flag"

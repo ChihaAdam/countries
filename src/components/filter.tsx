@@ -11,9 +11,11 @@ export const Filter = () => {
         onClick={() => setShown(!shown)}
         className="relative flex items-center justify-between gap-2 bg-white dark:bg-[var(--dark-mode-elements)] shadow-sm shadow-gray-200 dark:shadow-gray-800 rounded-md py-4 px-6 text-[14px] font-[600] w-48 cursor-pointer max-sm:w-full"
       >
-        <p>{filter || "Filter by Region"}</p>
+        <p className="select-none">{filter || "Filter by Region "}</p>
         <IoChevronDown
-          className={`text-xl cursor-pointer transition-all duration-200 ease-in-out ${shown ? "rotate-180" : ""}`}
+          className={`text-xl cursor-pointer transition-all duration-200 ease-in-out ${
+            shown ? "rotate-180" : ""
+          }`}
           onClick={() => setShown(!shown)}
         />
       </div>
@@ -22,7 +24,7 @@ export const Filter = () => {
           {regions.map((region) => (
             <div
               key={region}
-              className="p-2 hover:bg-[var(--light-mode-bg)] dark:hover:bg-[var(--dark-mode-bg)] cursor-pointer transition-all duration-200 ease-in-out"
+              className="p-2 select-none hover:bg-[var(--light-mode-bg)] dark:hover:bg-[var(--dark-mode-bg)] cursor-pointer transition-all duration-200 ease-in-out"
               onClick={() => {
                 changeFilter(region);
                 setShown(false);

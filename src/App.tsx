@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Nav from "./pages/nav";
 import MainPage from "./pages/mainPage";
 import Error from "./components/static/error";
+import Info from "./pages/info";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
         path: "/",
         element:<MainPage />,
       },  
+      {
+        path: "/info/:name",
+        element: <Info />,
+      }
     ],
   },
 ]);

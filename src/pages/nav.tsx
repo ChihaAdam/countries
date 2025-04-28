@@ -7,10 +7,10 @@ function Nav() {
   return (
     <div
       className="font-nunito bg-[var(--light-mode-bg)] dark:bg-[var(--dark-mode-bg)] min-h-screen flex flex-col max-sm:gap-2
-                 gap-10  text-[var(--light-mode-text)] dark:text-white transition-all duration-300 ease-in-out"
+                   text-[var(--light-mode-text)] dark:text-white transition-all duration-300 ease-in-out"
     >
       <div
-        className="sticky top-0 left-0 flex justify-between bg-white dark:bg-[var(--dark-mode-elements)] py-4
+        className="z-100 sticky top-0 left-0 flex justify-between bg-white dark:bg-[var(--dark-mode-elements)] py-4
                           w-screen h-16 items-center 
                         px-20 shadow-sm shadow-gray-200 dark:shadow-gray-800 max-sm:px-4 max-sm:gap-2"
       >
@@ -30,7 +30,9 @@ function Nav() {
           <p className="flex-1 font-[600] text-md select-none">Dark Mode</p>
         </div>
       </div>
+      <div className="py-20">
       <Outlet />
+      </div>
     </div>
   );
 }
