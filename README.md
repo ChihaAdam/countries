@@ -77,4 +77,4 @@ Since this project is still under development, contributions, issues, and featur
 
 ## 👨‍💻 Author
 
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@yourusername](https://github.com/chihaadam)
