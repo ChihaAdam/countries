@@ -6,6 +6,7 @@ interface CardProps {
   region: string;
   capital: string;
   flags: string;
+  code: string;
 }
 
 export default function Card({
@@ -14,18 +15,20 @@ export default function Card({
   region,
   capital,
   flags,
+  code
 }: CardProps) {
   // Define the Card component that takes in props for country details
   const navigate = useNavigate();
-  const handleCardClick = (name: string) => {
-    navigate(`/info/${name}`);
+  const handleCardClick = (code: string) => {
+    navigate(`/${code}`);
+    console.log(code)
   };
   return (
     <div
       className="bg-white dark:bg-[var(--dark-mode-elements)] shadow-md shadow-[var(--light-mode-shadow)] 
                   rounded-md pb-6 hover:shadow-lg transition-all duration-200 ease-in-out cursor-pointer 
                   max-sm:w-full max-sm:h-72 "
-      onClick={() => handleCardClick(name)}
+      onClick={() => handleCardClick(code)}
     >
       <img
         src={flags}

@@ -3,7 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Nav from "./pages/nav";
 import MainPage from "./pages/mainPage";
 import Error from "./components/static/error";
-import Info from "./pages/info";
+import { lazy, Suspense } from "react";
+import Loading from "./components/static/loading";
+const Info = lazy(() => import("./pages/info.tsx"));
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -14,12 +16,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element:<MainPage />,
-      },  
+        element: <MainPage />,
+      },
       {
-        path: "/info/:name",
-        element: <Info />,
-      }
+        path: "/:number",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Info />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

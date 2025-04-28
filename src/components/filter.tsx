@@ -1,9 +1,15 @@
 import { useFilterStore } from "../state/filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 import { IoChevronDown } from "react-icons/io5";
-export const Filter = () => {
+export const Filter = ({mutate}:{mutate: (filter: string)=> void}) => {
   const { filter, changeFilter } = useFilterStore();
+  useEffect(()=>{
+    if (filter==null) mutate("");
+    else{
+      mutate(filter=="America"?"Americas":filter);
+    }
+  },[filter])
   const [shown, setShown] = useState(false);
   return (
     <div>

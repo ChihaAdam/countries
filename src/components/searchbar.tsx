@@ -1,6 +1,4 @@
 import { IoSearchOutline } from "react-icons/io5";
-import { useCountriesStore } from "../state/countries";
-
 export default function SearchBar({mutate}: {mutate: (name: string) => void}) {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.toLowerCase();

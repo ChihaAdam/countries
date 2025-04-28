@@ -6,7 +6,7 @@ function Nav() {
   const { darkMode, toggleDarkMode }: DarkModeStore = useDarkModeStore();
   return (
     <div
-      className="font-nunito bg-[var(--light-mode-bg)] dark:bg-[var(--dark-mode-bg)] min-h-screen flex flex-col max-sm:gap-2
+      className="font-nunito bg-[var(--light-mode-bg)] dark:bg-[var(--dark-mode-bg)] min-h-screen w-screen flex flex-col max-sm:gap-2
                    text-[var(--light-mode-text)] dark:text-white transition-all duration-300 ease-in-out"
     >
       <div
@@ -30,8 +30,8 @@ function Nav() {
           <p className="flex-1 font-[600] text-md select-none">Dark Mode</p>
         </div>
       </div>
-      <div className="py-20">
-      <Outlet />
+      <div className="w-screen px-20 py-10">
+        <Outlet />
       </div>
     </div>
   );
